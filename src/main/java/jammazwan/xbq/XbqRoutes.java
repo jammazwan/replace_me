@@ -16,7 +16,7 @@ public class XbqRoutes extends RouteBuilder {
 				String fileName = "" + exchange.getIn().getHeader("CamelFileName");
 				System.err.println(")))))))))))))))))))) "+fileName);
 				 fileMaintainer.takeInput(fileName);
-				 fileMaintainer.updateAndFireAllRules();
+//				 fileMaintainer.updateAndFireAllRules();
 			}
 		});
 	}
