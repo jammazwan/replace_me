@@ -1,16 +1,16 @@
-package jammazwan.xbq;
+package jammazwan.replaceme;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class FileMaintainer {
+public class ProjectFiles {
 	private boolean hasNotes;
 	private boolean hasPom;
 	private boolean hasReadme;
 	private boolean hasExtra;
 	private boolean hasJenkins;
 
-	void takeInput(String fileName) {
+	void processFileName(String fileName) {
 		switch (fileName) {
 		case "README.md":
 			hasReadme = true;

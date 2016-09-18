@@ -1,4 +1,4 @@
-package jammazwan.xbq;
+package jammazwan.replaceme;
 
 import org.apache.camel.model.ModelCamelContext;
 

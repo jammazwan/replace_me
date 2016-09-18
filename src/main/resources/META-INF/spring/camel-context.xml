@@ -7,13 +7,14 @@
         http://www.springframework.org/schema/context/spring-context.xsd
         http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 	
-	<context:component-scan base-package="jammazwan.xbq" />
+	<context:component-scan base-package="jammazwan.replaceme" />
    
-    <bean id="xbqRoutes" class="jammazwan.xbq.XbqRoutes"/>
-    <bean id="fileMaintainer" class="jammazwan.xbq.FileMaintainer"/>
+    <bean id="routes" class="jammazwan.replaceme.Routes"/>
+    <bean id="projectFiles" class="jammazwan.replaceme.ProjectFiles"/>
+    <bean id="rules" class="jammazwan.replaceme.Rules"/>
 
-    <camelContext id="xbq" xmlns="http://camel.apache.org/schema/spring">
-        <routeBuilder ref="xbqRoutes"/>
+    <camelContext id="replaceme" xmlns="http://camel.apache.org/schema/spring">
+        <routeBuilder ref="routes"/>
     </camelContext>
 
 </beans>

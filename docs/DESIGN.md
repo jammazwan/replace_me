@@ -15,6 +15,9 @@ high level objectives
             like backups and whiteboards and cross-media references
         enforcement
             like minimum tweets, reminders when tasks not complete
+	emphasis on saving time over enforcement or compliance
+		lets you make mistakes doesn't care
+		instead just tries to 
 how to accomplish
     walks specified directories called workspaces
         within workspaces, files and projects

@@ -1,4 +1,4 @@
-package jammazwan.xbq;
+package jammazwan.replaceme;
 
 import java.util.Set;
 
@@ -6,10 +6,19 @@ import org.apache.camel.test.spring.CamelSpringTestSupport;
 import org.drools.compiler.compiler.xml.RulesSemanticModule;
 import org.junit.Test;
 import org.kie.api.runtime.KieSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class XbqTest extends CamelSpringTestSupport {
+import jammazwan.replaceme.ProjectFiles;
+import jammazwan.replaceme.Rules;
+
+public class RouteTest extends CamelSpringTestSupport {
+
+//	@Autowired
+//	ProjectFiles projectFiles;
+//	@Autowired
+//	Rules rules;
 
 	@Override
 	protected AbstractXmlApplicationContext createApplicationContext() {
@@ -19,11 +28,11 @@ public class XbqTest extends CamelSpringTestSupport {
 
 	@Test
 	public void testXbq() throws Exception {
-//		FileMaintainer fileMaintainer = (FileMaintainer)this.applicationContext.getBean("fileMaintainer");
+		ProjectFiles projectFiles = (ProjectFiles)this.applicationContext.getBean("projectFiles");
+		Rules rules = (Rules)this.applicationContext.getBean("rules");
 		HoldContextOpenUntilDone.go(context);
-		Rules rules = new Rules();
-		KieSession kieSession = rules.getRuleSession();
-		Set<String> globalSet = (Set<String>)kieSession.getGlobal("controlSet");
+		rules.printGlobalSet();
+		Set<String> globalSet = rules.insertUpdate(projectFiles);
 		assertTrue(globalSet.contains("README"));
 		assertTrue(globalSet.contains("pom"));
 		assertTrue(globalSet.contains("NOTES"));
